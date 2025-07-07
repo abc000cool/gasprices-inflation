@@ -1,0 +1,10 @@
+---
+title: "Sources"
+format: html
+---
+
+The primary dataset for this project was obtained from a publicly available CSV file hosted on GitHub by AnthonyCampos123, titled Predict Gas Price Given Year and Inflation Rate. This dataset includes historical records of average gasoline prices along with corresponding inflation rates for each year. By leveraging this well-structured dataset, the project could focus on modeling and visualization without the need for extensive raw data collection.
+
+Before analysis, the dataset underwent a cleaning process to ensure accuracy and consistency. Missing or incomplete observations were identified and removed to prevent skewed results or errors during visualization. Any duplicate entries were also filtered out to maintain data integrity. Additionally, inflation rates and gas prices were checked for outliers or anomalous values that could disproportionately affect trends; such observations were reviewed and excluded when they appeared inconsistent with overall patterns or known economic events.
+
+https://github.com/AnthonyCampos123/Gas-Price-v.-Inflation-Categorization-Training-Dataset/blob/main/Predict%20Gas%20Price%20Given%20Year%20and%20Inflation%20Rate%20-%20Sheet1.csv

@@ -2,4 +2,9 @@
 title: "About"
 ---
 
-About this site
+Hi! My name is Ansh Pathak, a high-school junior! You can email me at pathakansh10@gmail.com for any inquiries.
+You can find my github here: https://github.com/abc000cool
+
+This project shows plots of U.S. Gas prices from 2003-2023 and their respective inflation rates. You can find the repository for this project here: https://github.com/abc000cool/gasprices-inflation
+
+This project was created as a part of Kane’s Data Science Bootcamp.  https://bootcamp.davidkane.info/

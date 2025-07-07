@@ -1,7 +1,87 @@
 ---
 title: "Gas Prices & Inflation"
+author: Ansh Pathak
 ---
 
-This is a Quarto website.
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Load tidyverse
+library(tidyverse)
+
+# Read in the dataset
+data <- read_csv("Predict Gas Price Given Year and Inflation Rate - Sheet1.csv")
+
+# Basic structure of column names:
+# "Year", "Inflation Rate (%)", "Gas Price Avg"
+
+# Create a line plot of gas price over time
+ggplot(data, aes(x = Year, y = `Gas Price Avg`)) + 
+  geom_line(color = "#1f77b4", linewidth = 1.5) +      # Modern blue line
+  geom_point(color = "#d62728", size = 3, alpha = 0.9) + # Bold red points
+  labs(
+    title = "U.S. Average Gas Prices Over Time",
+    x = "Year",
+    y = "Gas Price (USD)"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+library(tidyverse)
+
+# Load dataset
+data <- read_csv("Predict Gas Price Given Year and Inflation Rate - Sheet1.csv")
+
+# Create a tidy (longer) version of the data to plot both variables on the same graph
+data_long <- data %>%
+  select(Year, `Inflation Rate (%)`, `Gas Price Avg`) %>%
+  pivot_longer(
+    cols = c(`Inflation Rate (%)`, `Gas Price Avg`),
+    names_to = "Variable",
+    values_to = "Value"
+  )
+
+# Plot both lines with smoothing
+ggplot(data_long, aes(x = Year, y = Value, color = Variable)) +
+  geom_smooth(method = "loess", span = 0.2, linewidth = 1.5, se = FALSE) +
+  scale_color_manual(
+    values = c(
+      "Inflation Rate (%)" = "#E67E22",   # orange for inflation
+      "Gas Price Avg" = "#2E86AB"         # blue for gas
+    )
+  ) +
+  labs(
+    title = "Smoothed Comparison of Inflation and Gas Prices Over Time",
+    subtitle = "LOESS smoothing applied to visualize long-term trends",
+    x = "Year",
+    y = "Value",
+    color = "Variable",
+    caption = "Source: Internal Dataset"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 13, hjust = 0.5, margin = margin(b = 10)),
+    axis.title = element_text(size = 13, face = "bold"),
+    axis.text = element_text(size = 11),
+    legend.position = "top",
+    plot.caption = element_text(size = 10, hjust = 1, face = "italic"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+The two plots together offer a compelling view of gas prices in the U.S. over time from both a raw and a trend-focused perspective. The first graph shows a detailed point-by-point line plot of average gas prices, emphasizing the monthly or annual fluctuations with high granularity. The red dots mark each data point, while the connecting blue line reveals the sharp rises and dips in gas prices—especially visible around 2008 and again in the early 2020s. This plot gives a clear sense of volatility and short-term changes.
+
+In contrast, the second graph smooths out these fluctuations using LOESS regression to visualize long-term trends of both inflation rate (orange line) and gas prices (blue line) on the same plot. This dual-line smoothed view reveals important insights: while gas prices generally trend upward with inflation, there are key periods (like 2009 and 2014) where the two diverge—suggesting that gas prices are influenced by more than just inflation, such as market shocks, geopolitical events, or supply chain disruptions. Together, the two plots provide both precision and perspective—capturing the immediate data while uncovering the broader economic narrative.
