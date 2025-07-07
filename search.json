@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Sources",
+    "section": "",
+    "text": "The primary dataset for this project was obtained from a publicly available CSV file hosted on GitHub by AnthonyCampos123, titled Predict Gas Price Given Year and Inflation Rate. This dataset includes historical records of average gasoline prices along with corresponding inflation rates for each year. By leveraging this well-structured dataset, the project could focus on modeling and visualization without the need for extensive raw data collection.\nBefore analysis, the dataset underwent a cleaning process to ensure accuracy and consistency. Missing or incomplete observations were identified and removed to prevent skewed results or errors during visualization. Any duplicate entries were also filtered out to maintain data integrity. Additionally, inflation rates and gas prices were checked for outliers or anomalous values that could disproportionately affect trends; such observations were reviewed and excluded when they appeared inconsistent with overall patterns or known economic events.\nhttps://github.com/AnthonyCampos123/Gas-Price-v.-Inflation-Categorization-Training-Dataset/blob/main/Predict%20Gas%20Price%20Given%20Year%20and%20Inflation%20Rate%20-%20Sheet1.csv"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi! My name is Ansh Pathak, a high-school junior! You can email me at pathakansh10@gmail.com for any inquiries. You can find my github here: https://github.com/abc000cool\nThis project shows plots of U.S. Gas prices from 2003-2023 and their respective inflation rates. You can find the repository for this project here: https://github.com/abc000cool/gasprices-inflation\nThis project was created as a part of Kane’s Data Science Bootcamp. https://bootcamp.davidkane.info/"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Gas Prices & Inflation",
+    "section": "",
+    "text": "The two plots together offer a compelling view of gas prices in the U.S. over time from both a raw and a trend-focused perspective. The first graph shows a detailed point-by-point line plot of average gas prices, emphasizing the monthly or annual fluctuations with high granularity. The red dots mark each data point, while the connecting blue line reveals the sharp rises and dips in gas prices—especially visible around 2008 and again in the early 2020s. This plot gives a clear sense of volatility and short-term changes.\nIn contrast, the second graph smooths out these fluctuations using LOESS regression to visualize long-term trends of both inflation rate (orange line) and gas prices (blue line) on the same plot. This dual-line smoothed view reveals important insights: while gas prices generally trend upward with inflation, there are key periods (like 2009 and 2014) where the two diverge—suggesting that gas prices are influenced by more than just inflation, such as market shocks, geopolitical events, or supply chain disruptions. Together, the two plots provide both precision and perspective—capturing the immediate data while uncovering the broader economic narrative."
+  }
+]
